@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.encoding {
+    display: flex;
+    gap: 80px;
+}
+
+.encoding__input {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.encoding__output {
+    display: flex;
+    flex-direction: column;
+    gap:40px
+}
