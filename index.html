@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header></header>
-    <main>
-        <section>
+    <main class="encoding">
+        <section class="encoding__input">
             <textarea placeholder="Ingrese el texto aqui"></textarea>
-            <button>Encriptar</button>
-            <button>Desencriptar</button>
+            <span class="encoding__input__error">
+                <img src="assets/warning-sign.png" alt="">
+                Solo letras minúsculas y sin acentos
+            </span>
+            <div class="encoding__input__buttons">
+                <button>Encriptar</button>
+                <button>Desencriptar</button>
+            </div>
         </section>
-        <section>
-            <textarea></textarea>
+        <section class="encoding__output">
+            <textarea readonly></textarea>
             <button>Copiar</button>
         </section>
     </main>
