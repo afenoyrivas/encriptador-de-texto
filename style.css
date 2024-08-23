@@ -3,9 +3,20 @@
     margin: 0;
 }
 
+body {
+    box-sizing: border-box;
+}
+
+.header {
+    padding: 2% 0% 0% 2%;
+}
+
 .encoding {
     display: flex;
-    gap: 80px;
+    /* gap: 80px; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 6% 15%;
 }
 
 .encoding__input {
@@ -14,8 +25,23 @@
     gap: 40px;
 }
 
+.encoding__input__error {
+    display: none; /*oculta el mensaje de error*/
+}
+
 .encoding__output {
     display: flex;
     flex-direction: column;
     gap:40px
+}
+
+.text-area {
+    border: 1px solid;
+    resize: none;
+    height: 100%;
+    width: 100%;
+}
+
+.footer {
+    text-align: center;
 }
