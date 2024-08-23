@@ -7,24 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header></header>
+    <header class="header">
+        <p>
+            Alura Latam | ONE G7
+        </p>
+    </header>
     <main class="encoding">
         <section class="encoding__input">
-            <textarea placeholder="Ingrese el texto aqui"></textarea>
+            <textarea class="text-area" id="encoding__input__text" placeholder="Ingrese el texto aqui"></textarea>
             <span class="encoding__input__error">
                 <img src="assets/warning-sign.png" alt="">
                 Solo letras minúsculas y sin acentos
             </span>
             <div class="encoding__input__buttons">
-                <button>Encriptar</button>
-                <button>Desencriptar</button>
+                <button onclick="code()">Encriptar</button>
+                <button onclick="decode()">Desencriptar</button>
             </div>
         </section>
         <section class="encoding__output">
-            <textarea readonly></textarea>
+            <textarea class="text-area" id="encoding__output__text" readonly></textarea>
             <button>Copiar</button>
         </section>
     </main>
-    <footer></footer>
+    <footer class="footer">
+        <p>
+            Agostina Fenoy Rivas | 2024
+        </p>
+    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
