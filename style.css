@@ -1,10 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --bg-color: #F3F5FC;
+    --input-text-color: #0A3871;
+    --output-text-color: #495057;
+    --accent-color: #D8DFE8;
+
+    --font: "Inter", sans-serif;
+}
+
 * {
     padding: 0;
     margin: 0;
 }
 
 body {
+    background-color: var(--bg-color);
+    height: 100vh;
     box-sizing: border-box;
+    font-family: var(--font);
 }
 
 .header {
@@ -13,29 +27,111 @@ body {
 
 .encoding {
     display: flex;
-    /* gap: 80px; */
+    gap: 80px;
     align-items: center;
+    /*margin: 15% 0%; /*arriba y abajo, costados*/
     justify-content: space-between;
     padding: 6% 15%;
 }
 
+/* INPUT, ENCRIPTACIÓN Y DESENCRIPTACIÓN ------------------------------- */
+
 .encoding__input {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 429px;
+    margin: 168px 0;
+}
+
+#encoding__input__text {
+    font-size: 2rem;
+    background-color: var(--bg-color);
+    border: none;
 }
 
 .encoding__input__error {
-    display: none; /*oculta el mensaje de error*/
+    /*display: none; /*oculta el mensaje de error*/
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
+
+.encoding__input__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.buttons {
+    font-family: var(--font);
+    font-size: 1rem;
+    width: 328px;
+    padding: 24px 0;
+    border-radius: 24px;
+}
+
+#code-button {
+    background-color: var(--input-text-color);
+    color: white;
+    border: 1px solid;
+    border-color: black;
+}
+
+#decode-button {
+    background-color: white;
+    color: var(--input-text-color);
+    border: 1px solid;
+    border-color: var(--input-text-color);
+}
+
+/* RESULTADO Y BOTÓN COPIAR -------------------------------------------- */
 
 .encoding__output {
     display: flex;
     flex-direction: column;
-    gap:40px
+    gap: 32px;
+    height: 944px;
+    width: 400px;
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
+    border-radius: 32px;
+    
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
 }
 
+#encoding__output__text{
+    width: 336px;
+    height: 781px;
+    font-size: 1.5rem;
+    /* border: none; */
+    /* display: none; */
+}
+
+.encoding__output__image {
+    width: 50%;
+}
+
+.copy-button {
+    font-family: var(--font);
+    font-size: 1rem;
+    background-color: white;
+    color: var(--input-text-color);
+    border: 1px solid;
+    border-color: var(--input-text-color);
+    border-radius: 24px;
+    width: 336px;
+    padding: 24px 0;
+}
+
+/*-----------------------------------------------------------------------*/
+
 .text-area {
+    /* background-color: var(--bg-color); */
+    font-family: var(--font);
     border: 1px solid;
     resize: none;
     height: 100%;
