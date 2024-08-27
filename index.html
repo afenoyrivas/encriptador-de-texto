@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
             <h1 class="title">Encriptador de Texto</h1>
         </div>
         
-        <button class="color-display-button" id="display-color" title="Modo claro/oscuro" aria-label="Cambiar entre modo claro y oscuro">
+        <button data-theme-toggle class="color-display-button" id="display-color" onclick="changeColorDisplay()" title="Modo claro/oscuro" aria-label="Cambiar entre modo claro y oscuro">
             <img class="light-dark-mode" src="./assets/day-and-night.png" alt="Ícono de noche y día">
         </button>
 
@@ -59,7 +59,7 @@
                 <p id="no-message-text">Ingresa el texto que desees encriptar o desencriptar.</p>
 
             </div>
-            
+
             <button class="copy-button" id="copy-button" onclick="copy()">Copiar</button>
 
         </section>
