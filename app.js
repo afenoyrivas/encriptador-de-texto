@@ -138,3 +138,12 @@ function paste() {
 }
 */
 
+//FUNCIÓN PARA CAMBIAR ENTRE MODO CLARO Y MODO OSCURO
+
+function changeColorDisplay(){
+    let currentTheme = document.querySelector("html").getAttribute("data-theme");
+    let newTheme = (currentTheme === "light" ? "dark" : "light");
+    document.querySelector("html").setAttribute("data-theme", newTheme);
+
+    console.log(`El tema previo es ${currentTheme} y el nuevo es ${newTheme}`);
+}
