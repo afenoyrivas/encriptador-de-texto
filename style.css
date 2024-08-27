@@ -1,13 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --bg-color: #F3F5FC;
-    --light-blue: #D8DFE8;
-    --dark-blue: #0A3871;
+    
+    --blue: #0A3871;
     --light-grey: #495057;
     --dark-grey: #343A40;
 
     --font: "Inter", sans-serif;
+}
+
+[data-theme="light"] {
+    --bg-color: #F3F5FC;
+    --light-blue: #D8DFE8;
+}
+
+[data-theme="dark"] {
+    --bg-color: #6E85B2;
+    --light-blue: #8FD6E1;
 }
 
 * {
@@ -45,7 +54,7 @@ body {
 }
 
 .title {
-    color: var(--dark-blue);
+    color: var(--blue);
     font-size: 1.5rem;
     font-weight: 300;
 
@@ -76,7 +85,7 @@ body {
     height: 100%;
 }
 
-/* INPUT, ENCRIPTACIÓN Y DESENCRIPTACIÓN --------------------------------- */
+/* INPUT, ENCRIPTACIÓN Y DESENCRIPTACIÓN ------------------------------- */
 
 .encoding__input {
     display: flex;
@@ -87,7 +96,7 @@ body {
 
 #encoding__input__text {
     background-color: var(--bg-color);
-    color: var(--dark-blue);
+    color: var(--blue);
     font-size: 2rem;
     border: none;
     outline: none; /*no se resalta el borde al seleccionar el elemento*/
@@ -97,7 +106,7 @@ body {
 }
 
 #encoding__input__text::placeholder {
-    color: var(--dark-blue);
+    color: var(--blue);
 }
 
 .warning-and-buttons {
@@ -107,7 +116,7 @@ body {
 
 .encoding__input__warning {
     color: var(--light-grey);
-    font-size: 0.75rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     margin: 1.5rem 0 1rem 0;
@@ -134,7 +143,7 @@ body {
 }
 
 #code-button {
-    background-color: var(--dark-blue);
+    background-color: var(--blue);
     color: white;
     border: none;
 }
@@ -144,8 +153,8 @@ body {
 }
 
 #decode-button {
-    border-color: var(--dark-blue);
-    color: var(--dark-blue);
+    border-color: var(--blue);
+    color: var(--blue);
     border: 1px solid;
 }
 
@@ -208,8 +217,8 @@ body {
 
 .copy-button {
     background-color: white;
-    color: var(--dark-blue);
-    border-color: var(--dark-blue);
+    color: var(--blue);
+    border-color: var(--blue);
     font-family: var(--font);
     font-size: 1rem;
     border: 1px solid;
@@ -237,7 +246,7 @@ body {
 
 .footer {
     background-color: var(--light-blue);
-    color: var(--dark-blue);
+    color: var(--blue);
     font-weight: 500;
     text-align: center;
     padding: 1.25rem;
@@ -245,7 +254,7 @@ body {
     box-shadow: 1px 0px 5px var(--bg-color);
 }
 
-/* DISEÑO RESPONSIVE ----------------------------------------------------*/
+/* DISEÑO RESPONSIVE --------------------------------------------------------*/
 
 @media (max-width: 1000px) {
 
