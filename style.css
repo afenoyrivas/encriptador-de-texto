@@ -2,9 +2,10 @@
 
 :root {
     --bg-color: #F3F5FC;
-    --input-text-color: #0A3871;
-    --output-text-color: #495057;
-    --accent-color: #D8DFE8;
+    --light-blue: #D8DFE8;
+    --dark-blue: #0A3871;
+    --light-grey: #495057;
+    --dark-grey: #343A40;
 
     --font: "Inter", sans-serif;
 }
@@ -14,130 +15,279 @@
     margin: 0;
 }
 
+/* BODY ----------------------------------------------------------------*/
+
 body {
     background-color: var(--bg-color);
+    font-family: var(--font);
     height: 100vh;
     box-sizing: border-box;
-    font-family: var(--font);
 }
 
+/* HEADER ------------------------------------------------------------*/
+
 .header {
-    padding: 2% 0% 0% 2%;
+    box-shadow: 1px 0px 5px var(--light-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 2% 1% 3%;
 }
+
+.header__content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header__image {
+    width: 1.5rem;
+}
+
+.title {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    font-weight: 300;
+
+}
+
+.color-display-button {
+    background-color: var(--light-blue);
+    border-radius: 16px;
+    border: none;
+    padding: 0.5rem;
+}
+
+.color-display-button:hover {
+    box-shadow: 1px 0px 5px var(--light-grey);
+}
+
+.light-dark-mode {
+    size: 1rem;
+}
+
+/* SECCIÓN MAIN ------------------------------------------------------------*/
 
 .encoding {
     display: flex;
-    gap: 80px;
     align-items: center;
-    /*margin: 15% 0%; /*arriba y abajo, costados*/
-    justify-content: space-between;
-    padding: 6% 15%;
+    gap: 4rem;
+    padding: 6% 4% 6% 10%;
+    height: 100%;
 }
 
-/* INPUT, ENCRIPTACIÓN Y DESENCRIPTACIÓN ------------------------------- */
+/* INPUT, ENCRIPTACIÓN Y DESENCRIPTACIÓN --------------------------------- */
 
 .encoding__input {
     display: flex;
     flex-direction: column;
-    gap: 429px;
-    margin: 168px 0;
+    width: 65%;
+    height: 100%;
 }
 
 #encoding__input__text {
-    font-size: 2rem;
     background-color: var(--bg-color);
+    color: var(--dark-blue);
+    font-size: 2rem;
     border: none;
+    outline: none; /*no se resalta el borde al seleccionar el elemento*/
+    width: 100%;
+    height: 75%;
+    padding: 0.25rem;
 }
 
-.encoding__input__error {
-    /*display: none; /*oculta el mensaje de error*/
+#encoding__input__text::placeholder {
+    color: var(--dark-blue);
+}
+
+.warning-and-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.encoding__input__warning {
+    color: var(--light-grey);
     font-size: 0.75rem;
     display: flex;
     align-items: center;
+    margin: 1.5rem 0 1rem 0;
     gap: 8px;
+}
+
+.encoding__input__warning__image {
+    size: 1rem;
 }
 
 .encoding__input__buttons {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
+    width: 100%;
+    gap: 1.5rem;
 }
 
 .buttons {
     font-family: var(--font);
     font-size: 1rem;
-    width: 328px;
-    padding: 24px 0;
     border-radius: 24px;
+    width: 50%;
+    padding: 24px 0;
 }
 
 #code-button {
-    background-color: var(--input-text-color);
+    background-color: var(--dark-blue);
     color: white;
-    border: 1px solid;
-    border-color: black;
+    border: none;
+}
+
+#code-button:hover {
+    background-color: var(--light-grey);
 }
 
 #decode-button {
-    background-color: white;
-    color: var(--input-text-color);
+    border-color: var(--dark-blue);
+    color: var(--dark-blue);
     border: 1px solid;
-    border-color: var(--input-text-color);
+}
+
+#decode-button:hover {
+    background-color: var(--light-blue);
 }
 
 /* RESULTADO Y BOTÓN COPIAR -------------------------------------------- */
 
 .encoding__output {
+    background-color: white;
+    color: var(--light-grey);
+    border-radius: 32px;
+
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    height: 944px;
-    width: 400px;
-    background-color: white;
-    border: 1px solid;
-    border-color: black;
-    border-radius: 32px;
-    
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-}
-
-#encoding__output__text{
-    width: 336px;
-    height: 781px;
-    font-size: 1.5rem;
-    /* border: none; */
-    /* display: none; */
+    height: 100%;
+    width: 40%;
+    gap: 1rem;
+    
+    box-shadow: 1px 0px 5px var(--light-blue);
 }
 
 .encoding__output__image {
-    width: 50%;
+    width: 70%;
+}
+
+.no-message-found{
+    font-family: var(--font);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+#no-message-title {
+    color: var(--dark-grey);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#no-message-text {
+    font-size: 1rem;
+}
+
+#encoding__output__text{
+    font-size: 1.5rem;
+    border: none;
+    outline: none; /*no se resalta el borde al seleccionar el elemento*/
+    width: 80%;
+    height: 75%;
+    margin: 2rem 0 0 0;
+
+    visibility: hidden;
 }
 
 .copy-button {
+    background-color: white;
+    color: var(--dark-blue);
+    border-color: var(--dark-blue);
     font-family: var(--font);
     font-size: 1rem;
-    background-color: white;
-    color: var(--input-text-color);
     border: 1px solid;
-    border-color: var(--input-text-color);
     border-radius: 24px;
-    width: 336px;
-    padding: 24px 0;
+    width: 70%;
+    padding: 20px 0;
+    margin: 0 0 1rem 0;
+
+    visibility: hidden;
+}
+
+.copy-button:hover {
+    background-color: var(--light-blue);
 }
 
 /*-----------------------------------------------------------------------*/
 
 .text-area {
-    /* background-color: var(--bg-color); */
     font-family: var(--font);
     border: 1px solid;
-    resize: none;
-    height: 100%;
-    width: 100%;
+    resize: none; /*no permite al usuario modificar el tamaño del textarea*/
 }
 
+/* FOOTER ---------------------------------------------------------------*/
+
 .footer {
+    background-color: var(--light-blue);
+    color: var(--dark-blue);
+    font-weight: 500;
     text-align: center;
+    padding: 1.25rem;
+
+    box-shadow: 1px 0px 5px var(--bg-color);
+}
+
+/* DISEÑO RESPONSIVE ----------------------------------------------------*/
+
+@media (max-width: 1000px) {
+
+    .encoding {
+        flex-direction: column;
+        padding: 4rem 0 0 0;
+        gap: 3rem;
+        height: auto;
+    }
+
+    .encoding__input {
+        width: 90%;
+    }
+
+    #encoding__input__text {
+        height: 20rem;
+    }
+    
+    .buttons {
+        padding: 18px 0;
+    }
+  
+    .encoding__output { 
+        width: 90%;
+        margin: 0 0 2rem 0;
+    }
+
+    .encoding__output__image {
+        display: none;
+    }
+
+    .no-message-found{
+        padding: 0 ;
+    }
+    
+    #encoding__output__text{
+        width: 90%;
+    }
+
+    .copy-button {
+        width: 90%;
+        padding: 18px 0;
+    }
+    
 }
