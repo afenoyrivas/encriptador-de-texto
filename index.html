@@ -6,34 +6,73 @@
     <title>Encriptador de texto</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
     <header class="header">
-        <p>
-            Alura Latam | ONE G7
-        </p>
+
+        <div class="header__content">
+            <img class="header__image" src="./assets/logo-alura.png" alt="Logo de Alura Latam">
+            <h1 class="title">Encriptador de Texto</h1>
+        </div>
+        
+        <button class="color-display-button" id="display-color" title="Modo claro/oscuro" aria-label="Cambiar entre modo claro y oscuro">
+            <img class="light-dark-mode" src="./assets/day-and-night.png" alt="Ícono de noche y día">
+        </button>
+
     </header>
+
     <main class="encoding">
+
         <section class="encoding__input">
-            <textarea class="text-area" id="encoding__input__text" placeholder="Ingrese el texto aqui"></textarea>
-            <span class="encoding__input__error">
-                <img src="assets/warning-sign.png" alt="">
-                Solo letras minúsculas y sin acentos
-            </span>
-            <div class="encoding__input__buttons">
-                <button onclick="code()">Encriptar</button>
-                <button onclick="decode()">Desencriptar</button>
+
+            <textarea class="text-area" id="encoding__input__text" placeholder="Ingrese el texto aquí"></textarea>
+
+            <div class="warning-and-buttons">
+
+                <span class="encoding__input__warning">
+
+                    <img class="encoding__input__warning__image" src="assets/warning-sign.png" alt="Símbolo de advertencia">
+                    Solo letras minúsculas y sin acentos
+
+                </span>
+
+                <div class="encoding__input__buttons">
+
+                    <button class="buttons" id="code-button" onclick="code()">Encriptar</button>
+                    <button class="buttons" id="decode-button" onclick="decode()">Desencriptar</button>
+
+                </div>
+
             </div>
+            
         </section>
+
         <section class="encoding__output">
+
             <textarea class="text-area" id="encoding__output__text" readonly></textarea>
-            <button>Copiar</button>
+            <img class="encoding__output__image" id="no-message-image" src="./assets/no-message-found-doll.png" alt="">
+
+            <div class="no-message-found">
+
+                <p id="no-message-title">Ningún mensaje fue encontrado</p>
+                <p id="no-message-text">Ingresa el texto que desees encriptar o desencriptar.</p>
+
+            </div>
+            
+            <button class="copy-button" id="copy-button" onclick="copy()">Copiar</button>
+
         </section>
+
     </main>
+
     <footer class="footer">
         <p>
             Agostina Fenoy Rivas | 2024
         </p>
     </footer>
+
     <script src="app.js"></script>
+
 </body>
 </html>
